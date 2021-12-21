@@ -18,11 +18,11 @@ public class FlightJoinMapper extends Mapper <LongWritable, Text, AirportWritabl
         String[] values = value
                 .toString()
                 .split(SEPERATOR);
-        String airportIDString = value[Destination_AIRPORT_ID_INDEX];
+        String airportIDString = values[Destination_AIRPORT_ID_INDEX];
 
         if (!airportIDString.equals((CSV_COLOUM_NAME)) {
             int airportID = Integer.parseInt(airportIDString);
-            String delay = value[DELAY_INDEX];
+            String delay = values[DELAY_INDEX];
             if (delay.length() != 0) {
                 context.write(
                         new AirportWritableComparable(
