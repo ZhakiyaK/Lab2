@@ -23,6 +23,10 @@ public class AirportWritableComparable implements WritableComparable<AirportWrit
         return this.airportID;
     }
 
+    protected IntWritable getDatasetIndicator() {
+        return this.datasetIndicator;
+    }
+
     @Override
     public void write(DataOutput dataOutput) throws IOException {
         airportID.write(dataOutput);
