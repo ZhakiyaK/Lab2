@@ -22,8 +22,8 @@ public class AirportJoinMapper extends Mapper<LongWritable, Text, AirportWritabl
                 .toString()
                 .split(SEPERATOR, LIMIT_SEPERATOR);
 
-        String airportIdString = removeDoubleQotesFromString(value[AIRPORT_ID_INDEX]);
-        String airportName = removeDoubleQotesFromString(value[AIRPORT_NAME_INDEX]);
+        String airportIdString = removeDoubleQotesFromString(values[AIRPORT_ID_INDEX]);
+        String airportName = removeDoubleQotesFromString(values[AIRPORT_NAME_INDEX]);
         if (!airportIdString.equals(CSV_COLOUMN_NAME)) {
             int airportID = Integer.parseInt(airportIdString);
             context.write(

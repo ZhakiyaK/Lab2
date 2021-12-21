@@ -20,7 +20,7 @@ public class FlightJoinMapper extends Mapper <LongWritable, Text, AirportWritabl
                 .split(SEPERATOR);
         String airportIDString = values[Destination_AIRPORT_ID_INDEX];
 
-        if (!airportIDString.equals((CSV_COLOUM_NAME)) {
+        if (!airportIDString.equals(CSV_COLOUM_NAME)) {
             int airportID = Integer.parseInt(airportIDString);
             String delay = values[DELAY_INDEX];
             if (delay.length() != 0) {
