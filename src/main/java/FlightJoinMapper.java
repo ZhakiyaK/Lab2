@@ -1,4 +1,5 @@
 import jdk.internal.module.ModuleLoaderMap;
+import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
@@ -11,7 +12,7 @@ public class FlightJoinMapper extends ModuleLoaderMap.Mapper <LongWritable, Text
     private static final String CSV_COLOUM_NAME = "\"DEST_AIRPORT_ID\"";
     private static final int Destination_AIRPORT_ID_INDEX = 14;
     private static final int DELAY_INDEX = 17;
-
+    private static final int DATASET_INDICAOT = 1;
 
 
 
@@ -28,7 +29,12 @@ public class FlightJoinMapper extends ModuleLoaderMap.Mapper <LongWritable, Text
             int airportID = Integer.parseInt(airportIDString);
             String delay = value[DELAY_INDEX];
             if (delay.length() != 0) {
-                context.write();
+                context.write(
+                        new AirportWritableComparable(
+                                new IntWritable(airportID),
+                                new IntWritable(DATASET_INDICAOT)
+                        )
+                );
             }
 
         }
