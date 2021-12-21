@@ -12,11 +12,7 @@ public class FlightJoinMapper extends ModuleLoaderMap.Mapper <LongWritable, Text
     private static final String CSV_COLOUM_NAME = "\"DEST_AIRPORT_ID\"";
     private static final int Destination_AIRPORT_ID_INDEX = 14;
     private static final int DELAY_INDEX = 17;
-    private static final int DATASET_INDICAOT = 1;
-
-
-
-
+    private static final int DATASET_INDICATOR = 1;
 
     @Override
     protected void map(LongWritable key, Text value, Mapper.Context context) throws IOException, InterruptedException, NumberFormatException {
@@ -32,8 +28,9 @@ public class FlightJoinMapper extends ModuleLoaderMap.Mapper <LongWritable, Text
                 context.write(
                         new AirportWritableComparable(
                                 new IntWritable(airportID),
-                                new IntWritable(DATASET_INDICAOT)
-                        )
+                                new IntWritable(DATASET_INDICATOR)
+                        ),
+                        new Text(delay)
                 );
             }
 
