@@ -6,7 +6,7 @@ import org.apache.hadoop.mapreduce.Mapper;
 
 import java.io.IOException;
 
-public class AirportJoinMapper extends Mapper<LongWritable, Text, AirportIDWritableComparable, Text>
+public class AirportJoinMapper extends Mapper<LongWritable, Text, AirportWritableComparable, Text>
 {   private static final String SEPERATOR = ",";
     private static final String EMPTY_STRING = "";
     private static final String CSV_COLOUMN_NAME = "Code";
@@ -27,7 +27,7 @@ public class AirportJoinMapper extends Mapper<LongWritable, Text, AirportIDWrita
         if (!airportIdString.equals(CSV_COLOUMN_NAME)) {
             int airportID = Integer.parseInt(airportIdString);
             context.write(
-                    new AirportIDWritableComparable(
+                    new AirportWritableComparable(
                             new IntWritable(airportID),
                             new IntWritable(DATASET_INDICATOR)
                     ),

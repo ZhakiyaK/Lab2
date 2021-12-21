@@ -14,7 +14,7 @@ public class AirportWritableComparable implements WritableComparable<AirportWrit
         datasetIndicator = new IntWritable(0);
     }
 
-    public AirportIDWritableComparable(IntWritable airportID, IntWritable datasetIndicator) {
+    public AirportWritableComparable(IntWritable airportID, IntWritable datasetIndicator) {
         this.airportID = airportID;
         this.datasetIndicator = datasetIndicator;
     }
@@ -36,7 +36,7 @@ public class AirportWritableComparable implements WritableComparable<AirportWrit
     }
 
     @Override
-    public int compareTo(AirportIDWritableComparable o) {
+    public int compareTo(AirportWritableComparable o) {
         int resultOfCompareAirportID = this.getAirportID()
                 .compareTo(
                         o.getAirportID()
