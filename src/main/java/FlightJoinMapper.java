@@ -1,4 +1,3 @@
-import jdk.internal.module.ModuleLoaderMap;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
@@ -7,7 +6,7 @@ import org.apache.hadoop.mapreduce.Mapper;
 import javax.print.attribute.standard.Destination;
 import java.io.IOException;
 
-public class FlightJoinMapper extends ModuleLoaderMap.Mapper <LongWritable, Text, AirportWritableComparable, Text> {
+public class FlightJoinMapper extends Mapper <LongWritable, Text, AirportWritableComparable, Text> {
     private static final String SEPERATOR = ",";
     private static final String CSV_COLOUM_NAME = "\"DEST_AIRPORT_ID\"";
     private static final int Destination_AIRPORT_ID_INDEX = 14;
