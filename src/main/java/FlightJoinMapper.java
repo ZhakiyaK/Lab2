@@ -3,5 +3,5 @@ import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 
 public class FlightJoinMapper extends ModuleLoaderMap.Mapper <LongWritable, Text, AirportWritableComparable, Text> {
-    private class
+    private class final 
 }
