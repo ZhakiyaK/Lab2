@@ -1,4 +1,4 @@
 import jdk.internal.module.ModuleLoaderMap;
 
-public class FlightJoinMapper extends ModuleLoaderMap.Mapper <> {
+public class FlightJoinMapper extends ModuleLoaderMap.Mapper <Long> {
 }
