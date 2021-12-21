@@ -1,2 +1,2 @@
-public class FlightJoinMapper {
+public class FlightJoinMapper extends  {
 }
