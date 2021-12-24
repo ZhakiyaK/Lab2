@@ -58,7 +58,7 @@ public class DelaysStat implements Serializable {
         return this.maxDelay;
     }
 
-    protected float getFlightsCount() {
+    protected int getFlightsCount() {
         return this.delayedCount;
     }
 
