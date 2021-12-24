@@ -5,7 +5,8 @@ import java.util.Map;
 public class AirportAnalyzerApp {
     private static final String SPARK_APP_NAME = "Airport analyzer";
     private static final String OUTPUT_FILENAME = "delays";
-
+    private static final String HDFS_PATH_TO_FLIGHTS = "airport.csv";
+    private static final String FLIGHTS_FILE_FIRST_LINE_PREFIX = "\"";
 
 
 
@@ -45,5 +46,7 @@ public class AirportAnalyzerApp {
         return data.filter(line -> !line.startsWith(firstLinePrefix));
     }
 
-    private static JavaPairRDD<Tuple2<String,String>, FlightDelay> parseFlightsDelaysFromCSV(JavaSparkContext)
+    private static JavaPairRDD<Tuple2<String,String>, FlightDelay> parseFlightsDelaysFromCSV(JavaSparkContext sc) {
+        return readDataFromCSV(sc, HDFS_PATH_TO_FLIGHTS, FLIGHTS_FILE_FIRST_LINE_PREFIX)
+    }
 }
