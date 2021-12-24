@@ -5,7 +5,7 @@ public class DelaysStat implements Serializable {
     private static final int    MIN_FLIGHTS_AMOUNT = 1;
     private static final int    MIN_CANCELLED_FLIGHTS_AMOUNT = 0:
     private static final int    MIN_DELAYED_FLIGHTS_AMOUNT = 0;
-    private static final float NO_DELAY_VALUE = 0.0F;
+    private static final float  NO_DELAY_VALUE = 0.0F;
 
     private float   delayedCount;
     private float   cancelledCount;
@@ -36,5 +36,15 @@ public class DelaysStat implements Serializable {
         this.cancelledCount = MIN_CANCELLED_FLIGHTS_AMOUNT;
         this.delayedCount = MIN_DELAYED_FLIGHTS_AMOUNT;
         this.maxDelay = NO_DELAY_VALUE;
+
+        updateDelaysStat(flightDelay);
+    }
+
+    protected static DelaysStat addDelay(DelaysStat delaysStat, FlighDelay flighDelay) {
+        delaysStat.updateDelaysStat(flighDelay);
+        return new DelaysStat(
+                delaysStat.getMaxDelay(),
+                delayStat
+        )
     }
 }
