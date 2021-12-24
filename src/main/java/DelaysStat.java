@@ -2,7 +2,7 @@ import java.io.Serializable;
 
 public class DelaysStat implements Serializable {
 
-    private static final int
+    private static final float NO_DELAY_VALUE = 0.0F;
 
     private float   delayedCount;
     private float   cancelledCount;
@@ -18,5 +18,13 @@ public class DelaysStat implements Serializable {
 
     private void updateDelaysStat(FlightDelay flightDelay) {
         if (flightDelay.getCancelledStatus()) {
+            this.cancelledCount++; }
+        else {
+            float delayValue = flightDelay.getDelayDuration();
+            if (delayValue != NO_DELAY_VALUE) {
+                this.delayedCount++;
+                this.maxDelay = getMax(delayValue, this.maxDelay);
+            }
+        }
     }
 }
