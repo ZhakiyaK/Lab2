@@ -7,7 +7,7 @@ public class AirportAnalyzerApp {
     private static final String OUTPUT_FILENAME = "delays";
     private static final String HDFS_PATH_TO_FLIGHTS = "airport.csv";
     private static final String FLIGHTS_FILE_FIRST_LINE_PREFIX = "\"";
-    private 
+    private static final String DATA_SEPERATOR = ",";
 
 
 
