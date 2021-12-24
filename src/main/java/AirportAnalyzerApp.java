@@ -8,8 +8,8 @@ public class AirportAnalyzerApp {
     private static final String HDFS_PATH_TO_FLIGHTS = "airport.csv";
     private static final String FLIGHTS_FILE_FIRST_LINE_PREFIX = "\"";
     private static final String DATA_SEPERATOR = ",";
-    private 
-
+    private static final int    AIRPORT_ID_INDEX = 0;
+    private static final int    AIRPORT_NAME_INDEX = 1;
 
 
 
@@ -55,8 +55,11 @@ public class AirportAnalyzerApp {
                            FlightDelay.deleteDoubleQuotes(
                                    airportData[AIRPORT_ID_INDEX]
                            ),
-                   )
+                           FlightDelay.deleteDoubleQuotes(
+                                   airportData[AIRPORT_NAME_INDEX]
+                           )
+                   );
                }
-        )
+        );
     }
 }
