@@ -1,4 +1,5 @@
 import java.io.Serializable;
+import scala.Tuple2;
 
 public class FlightDelay implements Serializable {
     private static final int    CANCELLED_STATUS_INDEX = 1;
