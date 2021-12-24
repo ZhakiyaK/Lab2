@@ -1,5 +1,7 @@
 import scala.Tuple2;
 
+import java.util.Map;
+
 public class DelaysStatWithAirportNames extends DelaysStat {
     private static final String FLOAT_STRING_FORMAT = "%.2f";
     private static final int    PERCENT_CONVERSION_CONSTANT = 100;

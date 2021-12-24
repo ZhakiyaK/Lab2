@@ -4,10 +4,10 @@ import java.io.Serializable;
 
 
 public class FlightDelay implements Serializable {
-    private static final int    CANCELLED_STATUS_INDEX = 1;
-    private static final int    DELAY_DURATION_INDEX = 2;
-    private static final int    DEPARTURE_AIRPORT_ID_INDEX = 3;
-    private static final int    DESTINATION_AIRPORT_ID_INDEX = 4;
+    private static final int    CANCELLED_STATUS_INDEX = 10;
+    private static final int    DELAY_DURATION_INDEX = 20;
+    private static final int    DEPARTURE_AIRPORT_ID_INDEX = 15;
+    private static final int    DESTINATION_AIRPORT_ID_INDEX = 25;
     private static final String DOUBLE_QUOTES_REGEX = "\"";
     private static final String EMPTY_STRING = "";
 
