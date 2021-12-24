@@ -43,8 +43,12 @@ public class DelaysStat implements Serializable {
     protected static DelaysStat addDelay(DelaysStat delaysStat, FlighDelay flighDelay) {
         delaysStat.updateDelaysStat(flighDelay);
         return new DelaysStat(
-                delaysStat.getMaxDelay(),
-                delayStat
-        )
+                delayStat.getMaxDelay(),
+                delayStat.getFlightCount() + 1,
+                delayStat.getDelayedCount(),
+                delayStat.getCancelledCount()
+        );
     }
+
+    protected 
 }
