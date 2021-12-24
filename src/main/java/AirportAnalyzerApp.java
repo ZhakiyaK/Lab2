@@ -7,7 +7,7 @@ public class AirportAnalyzerApp {
     private static final String OUTPUT_FILENAME = "delays";
     private static final String HDFS_PATH_TO_FLIGHTS = "airport.csv";
     private static final String FLIGHTS_FILE_FIRST_LINE_PREFIX = "\"";
-
+    private 
 
 
 
@@ -47,6 +47,10 @@ public class AirportAnalyzerApp {
     }
 
     private static JavaPairRDD<Tuple2<String,String>, FlightDelay> parseFlightsDelaysFromCSV(JavaSparkContext sc) {
-        return readDataFromCSV(sc, HDFS_PATH_TO_FLIGHTS, FLIGHTS_FILE_FIRST_LINE_PREFIX)
+        return readDataFromCSV(sc, HDFS_PATH_TO_FLIGHTS, FLIGHTS_FILE_FIRST_LINE_PREFIX).mapToPair(
+               airport -> {
+                   String[] airportData = airport.split(DATA_SEPERATOR, 2);
+               }
+        )
     }
 }
