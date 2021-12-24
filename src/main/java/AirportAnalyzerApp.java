@@ -8,6 +8,7 @@ public class AirportAnalyzerApp {
     private static final String HDFS_PATH_TO_FLIGHTS = "airport.csv";
     private static final String FLIGHTS_FILE_FIRST_LINE_PREFIX = "\"";
     private static final String DATA_SEPERATOR = ",";
+    private 
 
 
 
@@ -50,6 +51,11 @@ public class AirportAnalyzerApp {
         return readDataFromCSV(sc, HDFS_PATH_TO_FLIGHTS, FLIGHTS_FILE_FIRST_LINE_PREFIX).mapToPair(
                airport -> {
                    String[] airportData = airport.split(DATA_SEPERATOR, 2);
+                   return new Tuple2<>(
+                           FlightDelay.deleteDoubleQuotes(
+                                   airportData[AIRPORT_ID_INDEX]
+                           ),
+                   )
                }
         )
     }
