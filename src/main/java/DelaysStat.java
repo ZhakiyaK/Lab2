@@ -50,5 +50,19 @@ public class DelaysStat implements Serializable {
         );
     }
 
-    protected 
+    protected static float getMax(float num1, float num2) {
+        return Math.max(num1, num2);
+    }
+
+    protected float getMaxDelay() {
+        return this.maxDelay;
+    }
+
+    protected float getFlightsCount() {
+        return this.delayedCount;
+    }
+
+    protected  float getCancelledCount() {
+        return this.cancelledCount;
+    }
 }
