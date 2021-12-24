@@ -91,5 +91,6 @@
     <orderEntry type="library" name="Maven: org.apache.hadoop:hadoop-mapreduce-client-jobclient:2.10.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.hadoop:hadoop-annotations:2.10.1" level="project" />
     <orderEntry type="library" name="Maven: org.scala-lang:scala-library:2.12.15" level="project" />
+    <orderEntry type="library" name="Maven: org.osgi:org.osgi.core:6.0.0" level="project" />
   </component>
 </module>
