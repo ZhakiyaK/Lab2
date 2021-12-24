@@ -27,4 +27,8 @@ public class DelaysStat implements Serializable {
             }
         }
     }
+
+    protected DelaysStat(FlightDelay flightDelay) {
+        
+    }
 }
