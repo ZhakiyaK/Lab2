@@ -4,7 +4,7 @@ import java.util.Map;
 
 public class AirportAnalyzerApp {
     private static final String SPARK_APP_NAME = "Airport analyzer";
-    pri
+    private static final String OUTPUT_FILENAME = "delays";
 
 
 
