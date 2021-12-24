@@ -7,10 +7,10 @@ public class DelaysStat implements Serializable {
     private static final int    MIN_DELAYED_FLIGHTS_AMOUNT = 0;
     private static final float  NO_DELAY_VALUE = 0.0F;
 
-    private float   delayedCount;
-    private float   cancelledCount;
-    private float   maxDelay;
-    private float   flightsCount;
+    private float      delayedCount;
+    private float      cancelledCount;
+    private float      maxDelay;
+    private final int  flightsCount;
 
     protected DelaysStat(float maxDelay, int flightsCounts, float delayedCount, float cancelledCount) {
         this.maxDelay = maxDelay;
