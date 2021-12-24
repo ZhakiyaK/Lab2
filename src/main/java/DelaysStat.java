@@ -1,4 +1,4 @@
-import java.io.Serializable;
+import scala.Serializable;
 
 public class DelaysStat implements Serializable {
 
