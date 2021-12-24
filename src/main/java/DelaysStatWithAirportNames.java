@@ -9,12 +9,10 @@ public class DelaysStatWithAirportNames extends DelaysStat {
     private final String        departureAirportName;
     private final String        destinationAirportName;
 
-
-
     public DelaysStatWithAirportNames(Tuple2<String, String> airportNames, DelaysStat delaysStatSrc, Map<String, String> airportName) {
         super (
                 delaysStatSrc.getMaxDelay(),
-                (int) delaysStatSrc.getFlightsCount(),
+                delaysStatSrc.getFlightsCount(),
                 delaysStatSrc.getDelayedCount(),
                 delaysStatSrc.getCancelledCount()
         );
