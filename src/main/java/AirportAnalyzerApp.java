@@ -4,7 +4,7 @@ import java.util.Map;
 
 public class AirportAnalyzerApp {
     private static final String SPARK_APP_NAME = "Airport analyzer";
-
+    pri
 
 
 
@@ -35,6 +35,6 @@ public class AirportAnalyzerApp {
                 )
         );
 
-        parsedData.saveAsTextFile
+        parsedData.saveAsTextFile(OUTPUT_FILENAME);
     }
 }
