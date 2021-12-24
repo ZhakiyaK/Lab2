@@ -65,4 +65,7 @@ public class DelaysStat implements Serializable {
     protected  float getCancelledCount() {
         return this.cancelledCount;
     }
+
+    protected Object getDelayedCount() {
+    }
 }

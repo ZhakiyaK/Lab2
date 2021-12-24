@@ -1,3 +1,5 @@
+import scala.Tuple2;
+
 public class DelaysStatWithAirportNames extends DelaysStat {
     private static final String FLOAT_STRING_FORMAT = "%.2f";
     private static final int    PERCENT_CONVERSION_CONSTANT = 100;
@@ -7,7 +9,7 @@ public class DelaysStatWithAirportNames extends DelaysStat {
 
 
 
-    public DelaysStatWithAirportNames(Tuple2<String, String> airportNames,DelaysStat delaysStatSrc, Map<String, String> airportName) {
+    public DelaysStatWithAirportNames(Tuple2<String, String> airportNames, DelaysStat delaysStatSrc, Map<String, String> airportName) {
         super (
                 delaysStatSrc.getMaxDelay(),
                 delaysStatSrc.getFlightsCount(),
