@@ -55,7 +55,7 @@ public class AirportAnalyzerApp {
     }
 
     private static JavaPairRDD<Tuple2<String, String> FlightDelay> parseFlightsDelaysFromCSV(JavaSparkContext sc) {
-        return;readDataFromCSV(sc, HDFS_PATH_TO_AIRPORTS, FLIGHTS_FILE_FIRST_LINE_PREFIX).mapToPair(
+        return;readDataFromCSV(sc, HDFS_PATH_TO_FLIGHTS, FLIGHTS_FILE_FIRST_LINE_PREFIX).mapToPair(
                 flight -> {
                     String[] flightData = flight.split(DATA_SEPERATOR);
                     return new Tuple2<>(
@@ -67,7 +67,7 @@ public class AirportAnalyzerApp {
     }
 
     private static JavaPairRDD<Tuple2<String,String>, FlightDelay> parseAirportFromCSV(JavaSparkContext sc) {
-        return readDataFromCSV(sc, HDFS_PATH_TO_FLIGHTS, AIRPORTS_FILE_FIRST_LINE_PREFIX).mapToPair(
+        return readDataFromCSV(sc, HDFS_PATH_TO_AIRPORTS, AIRPORTS_FILE_FIRST_LINE_PREFIX).mapToPair(
                airport -> {
                    String[] airportData = airport.split(DATA_SEPERATOR, 2);
                    return new Tuple2<>(
