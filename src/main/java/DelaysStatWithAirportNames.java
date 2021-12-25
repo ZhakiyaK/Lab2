@@ -17,8 +17,8 @@ public class DelaysStatWithAirportNames extends DelaysStat {
                 delaysStatSrc.getCancelledCount()
         );
 
-        this.departureAirportName = airportName.get(airportName.size());
-        this.destinationAirportName = airportName.get(airportName.size());
+        this.departureAirportName = airportName.get(airportName._1());
+        this.destinationAirportName = airportName.get(airportName._2());
     }
 
     @Override
