@@ -1,5 +1,3 @@
-
-
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
@@ -26,12 +24,12 @@ public class AirportAnalyzerApp {
         SparkConf conf = new SparkConf ().setAppName(SPARK_APP_NAME);
         JavaSparkContext sc = new JavaSparkContext(conf);
 
-        JavaPairRDD<Tuple2<String, String>, FlightDelay> flightsDelays = parseFlightDelaysFromCSV(sc);
+        JavaPairRDD<Tuple2<String, String>, FlightDelay> flightsDelays = parseFlightsDelaysFromCSV(sc);
 
-        JavaPairRDD<Tuple2<String, String>, DelayStat> delaysStat = flightsDelays.combineByKey(
+        JavaPairRDD<Tuple2<String, String>, DelaysStat> delaysStat = flightsDelays.combineByKey(
                 DelaysStat::new;
                 DelaysStat::addDelay;
-                DelayStat::add
+                DelaysStat::add
         );
 
         JavaPairRDD<String, String> airportNames = parseAirportFromCSV(sc);
@@ -68,7 +66,7 @@ public class AirportAnalyzerApp {
         );
     }
 
-    private static JavaPairRDD<Tuple2<String,String>, FlightDelay> parseFlightsDelaysFromCSV(JavaSparkContext sc) {
+    private static JavaPairRDD<Tuple2<String,String>, FlightDelay> parseAirportFromCSV(JavaSparkContext sc) {
         return readDataFromCSV(sc, HDFS_PATH_TO_FLIGHTS, AIRPORTS_FILE_FIRST_LINE_PREFIX).mapToPair(
                airport -> {
                    String[] airportData = airport.split(DATA_SEPERATOR, 2);
