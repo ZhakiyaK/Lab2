@@ -40,13 +40,25 @@ public class DelaysStat implements Serializable {
         updateDelaysStat(flightDelay);
     }
 
-    protected static DelaysStat addDelay(DelaysStat delaysStat, FlighDelay flighDelay) {
-        delaysStat.updateDelaysStat(flighDelay);
+    protected static DelaysStat addDelay(DelaysStat delayStat, FlighDelay flightDelay) {
+        delayStat.updateDelaysStat(flightDelay);
         return new DelaysStat(
-                delayStat.getMaxDelay(),
-                delayStat.getFlightCount() + 1,
+                delaysStat.getMaxDelay(),
+                delayStat.getFlightsCount() + 1,
                 delayStat.getDelayedCount(),
                 delayStat.getCancelledCount()
+        );
+    }
+
+    protected static DelaysStat add(DelaysStat a, DelaysStat b) {
+        return new DelaysStat(
+                getMax(
+                        a.getMaxDelay(),
+                        b.getMaxDelay()
+                ),
+                a.getFlightsCount() + b.getFlightsCount(),
+                a.getDelayedCount() + b.getDelayedCount(),
+                a.getCancelledCount() + b.getCancelledCount()
         );
     }
 
@@ -59,7 +71,7 @@ public class DelaysStat implements Serializable {
     }
 
     protected int getFlightsCount() {
-        return this.delayedCount;
+        return (int) this.delayedCount;
     }
 
     protected  float getCancelledCount() {
