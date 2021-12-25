@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class AirportAnalyzerApp {
     private static final String SPARK_APP_NAME = "Airport analyzer";
-    private static final String HDFS_PATH_TO_FLIGHTS = "airport.csv";
+    private static final String HDFS_PATH_TO_FLIGHTS = "flights.csv";
     private static final String HDFS_PATH_TO_AIRPORTS = "airports.csv";
     private static final String FLIGHTS_FILE_FIRST_LINE_PREFIX = "\"";
     private static final String AIRPORTS_FILE_FIRST_LINE_PREFIX = "C";
