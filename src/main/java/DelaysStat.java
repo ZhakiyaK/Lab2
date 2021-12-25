@@ -40,10 +40,10 @@ public class DelaysStat implements Serializable {
         updateDelaysStat(flightDelay);
     }
 
-    protected static DelaysStat addDelay(DelaysStat delayStat, FlighDelay flightDelay) {
+    protected static DelaysStat addDelay(DelaysStat delayStat, FlightDelay flightDelay) {
         delayStat.updateDelaysStat(flightDelay);
         return new DelaysStat(
-                delaysStat.getMaxDelay(),
+                delayStat.getMaxDelay(),
                 delayStat.getFlightsCount() + 1,
                 delayStat.getDelayedCount(),
                 delayStat.getCancelledCount()
