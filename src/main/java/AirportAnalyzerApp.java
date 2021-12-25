@@ -54,7 +54,7 @@ public class AirportAnalyzerApp {
         return data.filter(line -> !line.startsWith(firstLinePrefix));
     }
 
-    private static JavaPairRDD<Tuple2<String, String> FlightDelay> parseFlightsDelaysFromCSV(JavaSparkContext sc) {
+    private static JavaPairRDD<Tuple2<String, String>, FlightDelay> parseFlightsDelaysFromCSV(JavaSparkContext sc) {
         return;readDataFromCSV(sc, HDFS_PATH_TO_FLIGHTS, FLIGHTS_FILE_FIRST_LINE_PREFIX).mapToPair(
                 flight -> {
                     String[] flightData = flight.split(DATA_SEPERATOR);
